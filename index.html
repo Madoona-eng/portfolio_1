@@ -47,6 +47,54 @@
     .animate-fadeUp {
       animation: fadeUp 2s cubic-bezier(0.23, 1, 0.32, 1) both;
     }
+
+
+   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #171A2E;
+        }
+        
+        .diagonal-bg {
+            border-radius: 40px;
+            clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+        
+        .code-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="https://w0.peakpx.com/wallpaper/107/380/HD-wallpaper-code-letters-screen-blur-colorful-lettering-signs.jpg" width="800" height="600"><text x="0" y="50" font-family="monospace" font-size="40" fill="%23ffffff">code code code</text></svg>');
+            filter: blur(5px);
+            transform: scale(1.1);
+            mix-blend-mode: overlay;
+            opacity: 0.04;
+            pointer-events: none;
+        }
+        
+        .profile-image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        @media (max-width: 1024px) {
+            .diagonal-bg {
+                clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+                transform: none;
+                width: 100%;
+                height: 100%;
+                border-radius: 0;
+            }
+        }
   </style>
 </head>
 <body class="bg-white text-slate-800 antialiased animate-fadeUp" style="animation-delay:0s">
@@ -55,10 +103,11 @@
   <header class="fixed w-full z-40 animate-fadeUp" style="animation-delay:0.1s">
     <div class="max-w-6xl mx-auto px-6 md:px-8 lg:px-12 py-5 flex items-center justify-between">
       <div class="flex items-center gap-4">
-        <div class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-2xl font-bold text-[var(--navy)]">
-          <img src="https://raw.githubusercontent.com/Madoona-eng/imgs/refs/heads/main/noBgBlack.png" alt="HALA TEAM Logo" class="w-10 h-10 rounded-full shadow-md object-cover" />
-
-        </div>
+<div class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center">
+    <img src="https://raw.githubusercontent.com/Madoona-eng/imgs/refs/heads/main/noBgBlack.png" 
+         alt="HALA TEAM Logo" 
+         class="w-full h-full rounded-full object-contain p-1" />
+</div>
         <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-200">
           <a href="#home" class="px-3 py-2 rounded-md bg-[var(--navy)]/20">Home</a>
           <a href="#about" class="hover:text-[var(--accent)]">About</a>
@@ -77,58 +126,77 @@
   </header>
 
   <!-- HERO -->
-  <section id="home" class="pt-28 bg-[var(--navy)] text-white pb-16 relative overflow-hidden animate-fadeUp" style="animation-delay:0.2s">
-    <div class="max-w-6xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-
-      <!-- Left content -->
-      <div class="relative z-10">
-        <div class="fade-up show">
-          <p class="text-sm opacity-80">Hi I`m A</p>
-          <h1 class="mt-3 text-4xl lg:text-5xl font-extrabold leading-tight">Front End <span class="text-[var(--accent)]">Developer</span></h1>
-          <p class="mt-4 text-slate-200 max-w-xl">Hi, I'm Ahmad , A ux/ui Designer<br/>Welcome to my portfolio</p>
-          <div class="mt-6 flex items-center gap-4">
-            <button class="px-4 py-2 rounded-full bg-white text-[var(--navy)] font-semibold shadow">Contact me</button>
-            <a href="#portfolio" class="underline text-sm opacity-80">See my work</a>
-          </div>
-        </div>
-
-        <!-- decorative dotted dashed arrow -->
-        <div class="mt-8 hidden lg:block">
-          <svg width="180" height="60" viewBox="0 0 180 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 40 C50 10, 100 60, 160 20" stroke="#fff3" stroke-width="2" stroke-dasharray="6 6" fill="none"/>
-            <circle cx="160" cy="20" r="3" fill="white"/>
-          </svg>
-        </div>
-      </div>
-
-      <!-- Right profile card -->
-      <div class="flex justify-end">
-        <div class="relative w-72 lg:w-96">
-          <!-- orange tilted big shape -->
-          <div class="absolute inset-0 -right-6 -top-6 hero-shape bg-[var(--accent)] rounded-3xl h-full w-full transform rotate-2 shadow-2xl" style="background-color: #ff7a00;"></div>
-
-          <!-- navy rounded container holding the photo -->
-          <div class="relative profile-card p-4 lg:p-8 rounded-2xl bg-[var(--navy)] shadow-xl w-full glass" style="margin-left:18%; ">
-            <img src="assets/Capture.PNG" alt="profile" class="w-full h-64 object-cover rounded-xl border-4 border-white/10 shadow-lg"/>
-            <div class="mt-4 flex items-center justify-between">
-              <div class="text-white">
-                <p class="text-sm opacity-80">Ahmad</p>
-                <p class="text-xs opacity-70">UX/UI Designer</p>
-              </div>
-              <div class="text-white opacity-70 text-sm">+12 Years</div>
-            </div>
-          </div>
-
-          <!-- little dotted accent -->
-          <div class="absolute bottom-6 left-6 w-12 h-12 dot-grid rounded"></div>
-        </div>
-      </div>
-
+<section id="home" class="relative pt-20 pb-16 md:pt-28 md:pb-20 overflow-hidden text-white bg-[#171A2E]">
+    
+    <div class="absolute inset-0 z-0">
+        <img 
+            src="https://st4.depositphotos.com/1000128/21988/i/450/depositphotos_219883864-stock-photo-creative-abstract-php-web-design.jpg" 
+            alt="Blurred code background" 
+            class="w-full h-full object-cover filter  opacity-50 mix-blend-luminosity"
+        >
+        <div class="absolute inset-0 bg-[#171A2E]/50"></div>
     </div>
 
-    <!-- subtle background code blur to mimic sample -->
-    <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'400\'><text x=\'0\' y=\'14\' font-size=\'40\' fill=\'%23ffffff%27>code code code</text></svg>'); mix-blend-mode:overlay"></div>
-  </section>
+    <div class="absolute right-0 top-0 bottom-0 w-[80vw] h-[160vh] bg-[#FF7A00] diagonal-bg transform origin-top-right rotate-[10deg] translate-x-[50%] -translate-y-[20%] z-10"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative z-20">
+        <div class="relative z-20 py-6 md:py-10">
+            <p class="text-lg opacity-90 font-light">Hi I'm A</p>
+            <h1 class="mt-2 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight whitespace-nowrap">
+    <span class="text-[#FF7A00]">Front End</span> Developer
+</h1>
+            <p class="mt-4 text-slate-200 max-w-xl text-base md:text-lg font-normal">
+                Hi, I'm <strong>Ahmad</strong>, A <strong>UX/UI Designer</strong><br/>Welcome to my <strong>portfolio</strong>
+            </p>
+            <div class="mt-6 flex items-center gap-4">
+                <button class="px-6 py-3 rounded-full bg-[#E5B08E] hover:bg-[#FF7A00] text-[#171A2E] text-sm font-semibold shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                    Contact me
+                </button>
+            </div>
+
+            <div class="mt-12 ml-2 hidden lg:block">
+                <svg width="180" height="60" viewBox="0 0 180 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 40 C50 10, 100 60, 160 20" stroke="#fff3" stroke-width="2" stroke-dasharray="6 6" fill="none"/>
+                    <circle cx="160" cy="20" r="3" fill="white"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="flex justify-center lg:justify-end py-6 md:py-10 relative z-20">
+            <div class="relative w-[280px] md:w-[320px] lg:w-[350px] h-[400px] md:h-[450px] lg:h-[500px]">
+                <div class="absolute inset-0 bg-[#FF7A00] rounded-2xl shadow-xl transform rotate-[-8deg] translate-x-4 translate-y-4"></div>
+                <div class="absolute inset-0 bg-[#E5B08E] rounded-2xl shadow-xl transform rotate-[-4deg] translate-x-2 translate-y-2"></div>
+
+                <div class="absolute inset-0 w-full h-full rounded-2xl bg-[#121422] shadow-2xl overflow-hidden transform rotate-[4deg] -translate-x-2 -translate-y-2">
+                    <div class="w-full h-[75%] overflow-hidden rounded-t-2xl">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" 
+                             alt="Profile of Ahmad" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    
+                    <div class="p-4 text-white flex justify-between items-center bg-[#121422]">
+                        <div>
+                            <p class="text-sm font-semibold">Ahmad</p>
+                            <p class="text-xs opacity-70">UX/UI Designer</p>
+                        </div>
+                        <div class="w-10 h-10 rounded" style="background-image: radial-gradient(#fff4 15%, transparent 15%); background-size: 8px 8px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+
+<style>
+.bg-dots {
+    background-image: radial-gradient(#fff4 15%, transparent 15%);
+    background-size: 10px 10px;
+}
+</style>
+  
+
 
   <!-- ABOUT -->
  <section id="about" class="max-w-6xl mx-auto px-6 lg:px-12 py-20 relative animate-fadeUp" style="animation-delay:0.3s">
@@ -434,66 +502,72 @@
   </section>
 
   <!-- Portfolio -->
-  <section id="portfolio" class="relative py-20 bg-white overflow-hidden animate-fadeUp" style="animation-delay:0.6s">
-  <!-- Top curved white/orange shape -->
-  <div class="absolute top-0 left-0 w-full h-40 bg-orange-500 rounded-b-[4rem]"></div>
+<section id="portfolio" class="relative py-20 bg-white overflow-hidden animate-fadeUp" style="animation-delay:0.6s">
+    <!-- Top curved white/orange shape -->
+    <div class="absolute top-0 left-0 w-full h-40 bg-orange-500 rounded-b-[4rem]"></div>
 
-  <div class="relative max-w-6xl mx-auto px-6 lg:px-12 z-10">
-    <!-- Section Header -->
-    <h3 class="text-gray-800 font-semibold text-lg mb-6">My Portfolio</h3>
+    <div class="relative max-w-6xl mx-auto px-6 lg:px-12 z-10">
+        <!-- Section Header -->
+        <h3 class="text-gray-800 font-semibold text-lg mb-6">My Portfolio</h3>
 
-    <!-- Tabs -->
-    <div class="flex flex-wrap gap-4 mb-12">
-      <button class="px-6 py-3 bg-white text-orange-500 font-semibold rounded-full shadow-md border-2 border-orange-500">All</button>
-      <button class="px-6 py-3 bg-orange-100 text-gray-700 font-medium rounded-full">My personal projects</button>
-      <button class="px-6 py-3 bg-orange-100 text-gray-700 font-medium rounded-full">Team projects</button>
-    </div>
-
-    <!-- Portfolio Grid -->
-    <div class="bg-[#0B1A39] rounded-[2rem] px-8 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Card 1 -->
-      <div class="rounded-2xl overflow-hidden shadow-lg bg-[#102045] transform hover:-translate-y-1 transition">
-        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=800&auto=format&fit=crop" alt="App" class="w-full h-60 object-cover">
-        <div class="p-5 text-white">
-          <h4 class="text-lg font-semibold">App</h4>
-          <p class="text-sm opacity-75 mt-2">Lorem ipsum dolor sit amet.</p>
+        <!-- Tabs -->
+        <div class="flex flex-wrap gap-4 mb-12">
+            <button class="px-6 py-3 bg-white text-orange-500 font-semibold rounded-full shadow-md border-2 border-orange-500">All</button>
+            <button class="px-6 py-3 bg-orange-100 text-gray-700 font-medium rounded-full">My personal projects</button>
+            <button class="px-6 py-3 bg-orange-100 text-gray-700 font-medium rounded-full">Team projects</button>
         </div>
-      </div>
 
-      <!-- Card 2 (Highlighted Center) -->
-      <div class="rounded-2xl overflow-hidden shadow-xl transform scale-105 bg-white hover:scale-110 transition">
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="Website" class="w-full h-64 object-cover">
-        <div class="p-5">
-          <h4 class="text-lg font-semibold text-gray-900">Website</h4>
-          <p class="text-sm text-gray-600 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <div class="mt-3 flex gap-2 text-xs">
-            <span class="px-3 py-1 bg-orange-100 text-orange-600 rounded-full">HTML</span>
-            <span class="px-3 py-1 bg-orange-100 text-orange-600 rounded-full">CSS</span>
-            <span class="px-3 py-1 bg-orange-100 text-orange-600 rounded-full">JS</span>
-          </div>
+        <!-- Portfolio Grid -->
+        <div class="bg-[#0B1A39] rounded-[2rem] px-8 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- Card 1: App -->
+            <!-- Wrapped the card in an anchor tag (a) and added a placeholder href. -->
+            <!-- **TODO: Replace 'https://app-project-link.com' with your actual project URL.** -->
+            <a href="https://madoona-eng.github.io/portfolio_2/" target="_blank" class="block rounded-2xl overflow-hidden shadow-lg bg-[#102045] transform hover:-translate-y-1 transition duration-300">
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=800&auto=format&fit=crop" alt="App" class="w-full h-60 object-cover">
+                <div class="p-5 text-white">
+                    <h4 class="text-lg font-semibold">App</h4>
+                    <p class="text-sm opacity-75 mt-2">Lorem ipsum dolor sit amet.</p>
+                </div>
+            </a>
+
+            <!-- Card 2 (Highlighted Center): Website -->
+            <!-- Wrapped the card in an anchor tag (a) and added a placeholder href. -->
+            <!-- **TODO: Replace 'https://website-project-link.com' with your actual project URL.** -->
+            <a href="https://madoona-eng.github.io/portfolio_3/" target="_blank" class="block rounded-2xl overflow-hidden shadow-xl transform scale-105 bg-white hover:scale-110 transition duration-300">
+                <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="Website" class="w-full h-64 object-cover">
+                <div class="p-5">
+                    <h4 class="text-lg font-semibold text-gray-900">Website</h4>
+                    <p class="text-sm text-gray-600 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="mt-3 flex gap-2 text-xs">
+                        <span class="px-3 py-1 bg-orange-100 text-orange-600 rounded-full">HTML</span>
+                        <span class="px-3 py-1 bg-orange-100 text-orange-600 rounded-full">CSS</span>
+                        <span class="px-3 py-1 bg-orange-100 text-orange-600 rounded-full">JS</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 3: Software -->
+            <!-- Wrapped the card in an anchor tag (a) and added a placeholder href. -->
+            <!-- **TODO: Replace 'https://software-project-link.com' with your actual project URL.** -->
+            <a href="https://madoona-eng.github.io/portfolio_2/" target="_blank" class="block rounded-2xl overflow-hidden shadow-lg bg-[#102045] transform hover:-translate-y-1 transition duration-300">
+                <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=800&auto=format&fit=crop" alt="Software" class="w-full h-60 object-cover">
+                <div class="p-5 text-white">
+                    <h4 class="text-lg font-semibold">Software</h4>
+                    <p class="text-sm opacity-75 mt-2">Lorem ipsum dolor sit amet.</p>
+                </div>
+            </a>
         </div>
-      </div>
 
-      <!-- Card 3 -->
-      <div class="rounded-2xl overflow-hidden shadow-lg bg-[#102045] transform hover:-translate-y-1 transition">
-        <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=800&auto=format&fit=crop" alt="Software" class="w-full h-60 object-cover">
-        <div class="p-5 text-white">
-          <h4 class="text-lg font-semibold">Software</h4>
-          <p class="text-sm opacity-75 mt-2">Lorem ipsum dolor sit amet.</p>
+        <!-- Decorative dots -->
+        <div class="flex gap-2 mt-10 justify-start ml-2">
+            <div class="w-2 h-2 rounded-full bg-orange-500"></div>
+            <div class="w-2 h-2 rounded-full bg-orange-500"></div>
+            <div class="w-2 h-2 rounded-full bg-orange-500"></div>
+            <div class="w-2 h-2 rounded-full bg-orange-500"></div>
         </div>
-      </div>
     </div>
-
-    <!-- Decorative dots -->
-    <div class="flex gap-2 mt-10 justify-start ml-2">
-      <div class="w-2 h-2 rounded-full bg-orange-500"></div>
-      <div class="w-2 h-2 rounded-full bg-orange-500"></div>
-      <div class="w-2 h-2 rounded-full bg-orange-500"></div>
-      <div class="w-2 h-2 rounded-full bg-orange-500"></div>
-    </div>
-  </div>
 </section>
-
   <!-- Testimonial -->
  <!-- Testimonial Section -->
 <section id="testimonial" class="relative py-20 bg-[#FFF7F0] text-center overflow-hidden animate-fadeUp" style="animation-delay:0.7s">
